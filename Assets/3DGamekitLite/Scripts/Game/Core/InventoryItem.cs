@@ -52,6 +52,7 @@ namespace Gamekit3D
 
             }
         }
+        
 
         public void Save()
         {
@@ -83,6 +84,10 @@ namespace Gamekit3D
         {
             Data<bool> inventoryItemData = (Data<bool>)data;
             gameObject.SetActive(inventoryItemData.value);
+        }
+
+        void Update()
+        {
         }
     }
 }

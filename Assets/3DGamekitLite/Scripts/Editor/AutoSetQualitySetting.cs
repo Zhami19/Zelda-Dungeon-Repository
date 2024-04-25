@@ -40,22 +40,16 @@ public class AutoSetQualitySetting
 
     static void Update()
     {
-        bool force = QualitySettings.GetQualityLevel() < 1;
+        var type = typeof(Editor).Assembly.GetType("UnityEditor.GameView");
+        var property = type.GetProperty("lowResolutionForAspectRatios");
+        var gameviews = Resources.FindObjectsOfTypeAll(type);
 
-        if (force)
+        foreach (var gameview in gameviews)
         {
-            var type = typeof(Editor).Assembly.GetType("UnityEditor.GameView");
-            var property = type.GetProperty("lowResolutionForAspectRatios");
-            var gameviews = Resources.FindObjectsOfTypeAll(type);
-
-            foreach (var gameview in gameviews)
-            {
-                property.SetValue(gameview, QualitySettings.GetQualityLevel() < 1, null);
-            }
-
-            Debug.Log("Low Aspect ratio forced on GameViews");
+            property.SetValue(gameview, true, null);
         }
 
+        Debug.Log("Low Aspect ratio forced on GameViews");
         EditorApplication.update -= Update;
     }
 }

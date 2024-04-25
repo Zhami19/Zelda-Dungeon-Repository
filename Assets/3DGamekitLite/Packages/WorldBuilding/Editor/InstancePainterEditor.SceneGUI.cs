@@ -20,10 +20,9 @@ namespace Gamekit3D.WorldBuilding
             var controlId = GUIUtility.GetControlID(FocusType.Passive);
             var mousePos = Event.current.mousePosition;
 
-            var ray = HandleUtility.GUIPointToWorldRay(mousePos);
-
+            mousePos.y = Camera.current.pixelHeight - mousePos.y;
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, float.MaxValue, ip.layerMask))
+            if (Physics.Raycast(Camera.current.ScreenPointToRay(mousePos), out hit, float.MaxValue, ip.layerMask))
             {
                 worldCursor = hit.point;
                 var up = ip.followOnSurface ? hit.normal : Vector3.up;
