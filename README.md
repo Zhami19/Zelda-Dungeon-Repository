@@ -7,7 +7,7 @@ level design workflow such as sketching, whiteboxing, etc. In fact, now I have f
 ProBuilder tool.
 
 - <b>Playthrough</b>
-  - [Zelda Dungeon Project (Playthrough)](https://drive.google.com/file/d/1CZfUrP7gI__nKqvZ57Lm5XwmWiRxIRGZ/view?usp=sharing)
+  - [Zelda Dungeon Project (Playthrough)](https://drive.google.com/file/d/1rgUY7imtaICMXbcU--qaJMz5dAwaSToR/view?usp=sharing)
 
 - <b>Whitebox Sample</b>
   - [Zelda Dungeon Project (Whitebox Sample)](https://drive.google.com/file/d/1LfZ-bvsusphS52_M7XBb5bPt7nxdmwVz/view?usp=sharing)
